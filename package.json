@@ -1,0 +1,28 @@
+{
+  "name": "rest-samples",
+  "version": "1.0.0",
+  "description": "Rest service to expose some endpoints on heroku. Edit",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bpedroso/rest-samples.git"
+  },
+  "keywords": [
+    "node",
+    "javascript",
+    "rest",
+    "express"
+  ],
+  "author": "Bruno Augusto Pedroso",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bpedroso/rest-samples/issues"
+  },
+  "homepage": "https://github.com/bpedroso/rest-samples#readme",
+  "dependencies": {
+    "express": "^4.14.1"
+  }
+}
