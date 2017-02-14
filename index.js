@@ -43,7 +43,7 @@ app.get('/cool', function(request, response) {
 });
 
 
-http.listen((process.env.PORT || port), function(){
+app.listen((process.env.PORT || port), function(){
   console.log('listening on *:', port);
 });
 
