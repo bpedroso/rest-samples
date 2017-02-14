@@ -2,7 +2,6 @@
 var express = require('express')
 var app = express()
 var port = 3000
-//app.set('port', (process.env.PORT || port));
 
 //Auth
 var auth = require('http-auth');
@@ -29,8 +28,8 @@ app.all('/v1/sample', function (req, res, next) {
   var resBody = JSON.stringify(req.body, null, 2);
   var messageId = req.get('messageId');
 
-  console.info(new Date().toISOString(), ' - messageId: ', messageId);
-  console.info('Receiving: ', resBody);
+  console.log(new Date().toISOString(), ' - messageId: ', messageId);
+  console.log('Receiving: ', resBody);
   next();
 });
 
