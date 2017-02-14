@@ -1,7 +1,7 @@
 //Express APP
 var express = require('express')
 var app = express()
-var port = 3000
+var port = process.env.PORT || 3000;
 
 //Auth
 var auth = require('http-auth');
@@ -41,8 +41,7 @@ app.get('/cool', function(request, response) {
   response.send(cool());
 });
 
-
-app.listen((process.env.PORT || port), function(){
+app.listen(port, function(){
   console.log('listening on *:', port);
 });
 
