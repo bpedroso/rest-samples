@@ -1,12 +1,15 @@
+var cool = require('cool-ascii-faces');
 var express = require('express')
-var exp = express()
+var app = express()
 var bodyParser = require('body-parser')
 var port = 3000
 
-exp.use(bodyParser.urlencoded({ extended: true }));
-exp.use(bodyParser.json());
+app.set('port', (process.env.PORT || port));
 
-exp.all('/v1/sample', function (req, res, next) {
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+app.all('/v1/sample', function (req, res, next) {
   var resBody = JSON.stringify(req.body, null, 2);
   var messageId = req.get('messageId');
 
@@ -15,11 +18,15 @@ exp.all('/v1/sample', function (req, res, next) {
   next();
 });
 
-exp.post('/v1/sample', function (req, res) {
+app.post('/v1/sample', function (req, res) {
   res.status(200).type("json").json('{messageId: ' + req.get('messageId') + '}');
 });
 
-exp.listen(port, function () {
-  console.log('Example app listening on port ', port)
+app.get('/cool', function(request, response) {
+  response.send(cool());
+});
+
+app.listen(port, function () {
+  console.log('Listening on port ', port)
 });
 

@@ -4,7 +4,7 @@
   "description": "Rest service to expose some endpoints on heroku. Edit",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -23,11 +23,9 @@
   },
   "homepage": "https://github.com/bpedroso/rest-samples#readme",
   "dependencies": {
-    "morgan": "^1.8.1",
+    "body-parser": "1.0.2",
+    "cool-ascii-faces": "1.3.4",
     "express": "^4.14.1",
-    "body-parser": "~1.0.1"
-  }, 
-  "scripts": {
-    "start": "node index.js"
+    "morgan": "1.8.1"
   }
 }
