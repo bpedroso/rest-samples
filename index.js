@@ -44,4 +44,3 @@ app.get('/cool', function(request, response) {
 app.listen(port, function(){
   console.log('listening on *:', port);
 });
-
