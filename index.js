@@ -23,7 +23,6 @@ app.use(scribe.express.logger());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-
 app.all('/v1/sample', function (req, res, next) {
   var resBody = JSON.stringify(req.body, null, 2);
   var messageId = req.get('messageId');
@@ -36,6 +35,15 @@ app.all('/v1/sample', function (req, res, next) {
 app.post('/v1/sample', function (req, res) {
   res.status(200).type("json").json('{messageId: ' + req.get('messageId') + '}');
 });
+
+app.post('/v1/test', function(req, res) {
+  console.log('Pong!!! POST');
+})
+
+app.get('/v1/test', function(req, res) {
+  console.log('Pong!!! GET');
+})
+
 
 app.get('/cool', function(request, response) {
   response.send(cool());
